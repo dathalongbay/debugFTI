@@ -6,6 +6,8 @@
  * Time: 3:23 PM
  */
 
+$data = file_get_contents("php://input");
+echo "<pre> --- response";
 echo "<pre>";
-print_r($_POST);
+print_r($data);
 echo "</pre>";
