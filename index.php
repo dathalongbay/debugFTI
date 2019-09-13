@@ -65,7 +65,7 @@ if (isset($_POST["submit"]) && !empty($_POST["submit"])) {
     curl_setopt($curl, CURLOPT_POST, true);
 
 //Attach the XML string to the body of our request.
-    curl_setopt($curl, CURLOPT_POSTFIELDS, "xml=".$xml);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, "$xml");
 
 //Tell cURL that we want the response to be returned as
 //a string instead of being dumped to the output.
