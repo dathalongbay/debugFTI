@@ -18,7 +18,7 @@ if (isset($_POST["submit"]) && !empty($_POST["submit"])) {
     $ServiceNum = isset($_POST["ServiceNum"]) ? trim($_POST["ServiceNum"]) : "";
     $Phone = isset($_POST["Phone"]) ? trim($_POST["Phone"]) : "";
     $Syntax = isset($_POST["Syntax"]) ? trim($_POST["Syntax"]) : "";
-    $EncryptedMessage = strtolower(base64_decode($Syntax));
+    $EncryptedMessage = strtolower(base64_decode(utf8_decode($Syntax)));
     $PrivateKey = '844114065369337123338';
     $signature = base64_encode(sha1($MOId . $ServiceNum . $Phone . $EncryptedMessage . $PrivateKey, true));
 
