@@ -51,11 +51,13 @@ if (isset($_POST["submit"]) && !empty($_POST["submit"])) {
     echo "</pre>";
 //The URL that you want to send your XML to.
     $url = 'https://beautyexpo.ngoisao.net/soap/service.php?wsdl';
-    $url = 'https://debugfti.herokuapp.com/process.php';
+    //$url = 'https://debugfti.herokuapp.com/process.php';
 
 //Initiate cURL
     $curl = curl_init($url);
 
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+    
 //Set the Content-Type to text/xml.
     curl_setopt ($curl, CURLOPT_HTTPHEADER, array("Content-Type: text/xml"));
 
